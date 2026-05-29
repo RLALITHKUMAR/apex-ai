@@ -1,0 +1,50 @@
+# ──────────────────────────────────────────────────────────────────────────────
+#  NETLIFY DEPLOYMENT CONFIGURATION
+# ──────────────────────────────────────────────────────────────────────────────
+#
+# This file instructs Netlify to build only the React Vite frontend located in 
+# the 'frontend' folder, completely bypassing the root-level requirements.txt
+# and avoiding Python/TensorFlow package conflicts on Netlify.
+#
+# It also configures a production proxy so that any API requests to /api/* 
+# are routed to the live deployed Flask backend server.
+
+[build]
+  # 📁 The directory where Netlify will look for package.json and run npm install
+  base = "frontend"
+  
+  # 📦 The folder (relative to 'base') containing compiled static web files
+  publish = "dist"
+  
+  # 🛠️ The compilation command Netlify runs to build the React application
+  command = "npm run build"
+
+[build.environment]
+  # 🟢 Force Node.js 18+ for compiling the Vite React application
+  NODE_VERSION = "18"
+
+# ──────────────────────────────────────────────────────────────────────────────
+#  PRODUCTION API PROXY REDIRECT
+# ──────────────────────────────────────────────────────────────────────────────
+# When the React frontend makes requests to `/api/*`, this rule routes them 
+# to your live backend API deployed on Render, Railway, or AWS.
+#
+# IMPORTANT: Replace the 'to' URL below with your actual deployed Flask API address.
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://apex-ai-backend.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/uploads/*"
+  to = "https://apex-ai-backend.onrender.com/uploads/:splat"
+  status = 200
+  force = true
+
+# Fallback for Single Page Applications (SPA) client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
