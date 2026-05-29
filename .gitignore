@@ -1,0 +1,52 @@
+# ─── Environment & Secrets ────────────────────────────────────────────────────
+.env
+*.env.local
+
+# ─── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+pip-log.txt
+
+# ─── Node / React ─────────────────────────────────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/.vite/
+*.lock
+
+# ─── Generated Files ──────────────────────────────────────────────────────────
+uploads/
+reports/*.pdf
+*.log
+
+# ─── Trained Model (large binary — store with Git LFS if needed) ──────────────
+trained_model/*.h5
+trained_model/*.keras
+trained_model/*.pb
+
+# ─── Dataset (large files) ────────────────────────────────────────────────────
+dataset/
+
+# ─── OS Files ─────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── IDEs ─────────────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.swp
+
+# ─── Temporary / Zip Files ────────────────────────────────────────────────────
+google stitch.zip
+google-stitch-extracted/
+

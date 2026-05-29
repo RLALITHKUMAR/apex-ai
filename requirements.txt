@@ -1,0 +1,28 @@
+# ─── Web Framework ────────────────────────────────────────────────────────────
+flask
+flask-cors
+werkzeug
+
+# ─── AI / Deep Learning ───────────────────────────────────────────────────────
+tensorflow
+keras
+
+# ─── Computer Vision ──────────────────────────────────────────────────────────
+opencv-python
+pillow
+
+# ─── Data Science ─────────────────────────────────────────────────────────────
+numpy
+scikit-learn
+matplotlib
+scipy
+
+# ─── PDF Generation ───────────────────────────────────────────────────────────
+reportlab
+
+# ─── Utilities ────────────────────────────────────────────────────────────────
+python-dotenv
+tqdm
+requests
+pandas
+seaborn
