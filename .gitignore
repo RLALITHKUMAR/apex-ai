@@ -22,6 +22,8 @@ node_modules/
 frontend/dist/
 frontend/.vite/
 *.lock
+package-lock.json
+
 
 # ─── Generated Files ──────────────────────────────────────────────────────────
 uploads/
