@@ -16,8 +16,11 @@
   # 📦 The folder (relative to 'base') containing compiled static web files
   publish = "dist"
   
-  # 🛠️ The compilation command Netlify runs to build the React application
-  command = "npm run build"
+  # 🛠️ The compilation command Netlify runs to build the React application.
+  # We clear node_modules and run a fresh npm install to bypass the cached Windows optional dependencies
+  # and force npm to resolve the correct Linux-specific native binaries for Tailwind CSS v4.
+  command = "rm -rf node_modules && npm install && npm run build"
+
 
 [build.environment]
   # 🟢 Force Node.js 18+ for compiling the Vite React application
